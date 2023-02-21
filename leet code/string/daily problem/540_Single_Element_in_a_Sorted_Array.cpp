@@ -8,7 +8,7 @@
 
 // Input: nums = [1,1,2,3,3,4,4,8,8]
 // Output: 2
-
+// LEVEL -> EASY
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -17,15 +17,22 @@ class Solution
 public:
     int singleNonDuplicate(vector<int> &num)
     {
+        if(num.size() == 1)
+        {
+            return num[0];
+        }
+        int onlyOnes;
         for (int i = 1; i < num.size(); i += 2)
         {
             if (num[i] != num[i - 1])
             {
-                cout << num[i - 1] << endl;
-                return num[i - 1];
+                onlyOnes = num[i - 1];
+                return onlyOnes;
             }
         }
+        return num.at(num.size()-1);
     }
+    
 };
 
 int main()
