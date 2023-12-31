@@ -6,26 +6,21 @@ int main() {
 	cin >> t;
 	while(t--)
 	{
-	    int n,count = 0;
+	    int n;
 	    cin >> n;
-	    vector<int>arr(n+1,0);
-	    for(int i = 1; i <= n ;i++)
-	    {
-	        int num;
-	        cin >> num;
-	        arr[num] = i;
-	    }
+	    int arr[n];
+	    for(int i = 0; i < n; i++)
+	        cin >> arr[i];
+	    int curMax = arr[0],countCandy = 0;
 	    for(int i = 1; i < n; i++)
 	    {
-	        vector<int>s(arr.begin()+i+1,arr.end());
-	        sort(s.begin(),s.end());
-            cout << "s values "<<endl;
-            for(auto i : s)
-                cout << i << endl;
-	        if(s[s.size()-1] < arr[i]){
-	            count++;
+	        if(curMax < arr[i])
+	        {
+	            curMax = arr[i];
 	        }
+	        else
+	            countCandy++;
 	    }
-	    cout << count << endl;
+	    cout << countCandy << endl;
 	}
 }
