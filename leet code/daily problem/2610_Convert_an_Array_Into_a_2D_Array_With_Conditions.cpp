@@ -1,10 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
-class Solution
-{
+class Solution {
 public:
-    void findMatrix(vector<int> &nums)
-    {
+    vector<vector<int>> findMatrix(vector<int>& nums) {
         // Find maximum element
         sort(nums.begin(), nums.end());
         int maxElement = nums[nums.size() - 1] + 1;
@@ -15,10 +13,9 @@ public:
             arr[nums[i]]++;
             maxElement = max(maxElement, arr[nums[i]]);
         }
-
-        int row = maxElement, i = 1, j = 0;
-        vector<vector<int>> ans(row);
-        while (j < row)
+        int  i = 1, j = 0;
+        vector<vector<int>> ans(maxElement);
+        while (j < maxElement)
         {
             i = 1;
             while (i < arr.size())
@@ -32,15 +29,7 @@ public:
             }
             j++;
         }
-        cout << "printing of 2d vector" << endl;
-        for (int i = 0; i < ans.size(); i++)
-        {
-            for (int j = 0; j < ans[i].size(); j++)
-            {
-                cout << ans[i][j] << " ";
-            }
-            cout << endl;
-        }
+        return ans;
     }
 };
 int main()
