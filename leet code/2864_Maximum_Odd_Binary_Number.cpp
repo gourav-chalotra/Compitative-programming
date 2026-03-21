@@ -27,5 +27,6 @@ public:
 int main()
 {
     Solution s;
-    cout << s.maximumOddBinaryNumber("010");
+    cout << "Hello World!" << endl;
+    // cout << s.maximumOddBinaryNumber("010");
 }

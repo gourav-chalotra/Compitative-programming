@@ -38,6 +38,7 @@
     "ostream": "cpp",
     "random": "cpp",
     "vector": "cpp",
-    "new": "cpp"
+    "new": "cpp",
+    "ios": "cpp"
   }
 }
